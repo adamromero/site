@@ -1,0 +1,25 @@
+.footer {
+	background: $black;
+	width: 100%;
+    color: $white;
+	padding: 20px;
+	font-size: 1.4rem;
+}
+
+.footer__content {
+	font-size: 1.8rem;
+}
+
+.footer__column {
+	padding: 20px 0;
+}
+
+.footer__links {
+	display: block;
+	padding: .5rem;
+    line-height: 1;
+}
+
+.footer__copyright {
+	padding: 20px 20px 100px;
+}

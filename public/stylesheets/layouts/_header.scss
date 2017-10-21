@@ -1,0 +1,79 @@
+.header {
+	background: rgba(0, 0, 0, 0.75);
+    color: $white;
+	width: 100%;
+	text-align: center;
+	position: fixed;
+    z-index: 999;
+	
+	.header-main {
+		height: 6.2rem;
+		border-bottom: 0.5rem solid $theme-yellow;
+		font-family: 'Saira Extra Condensed', sans-serif;
+		position: relative;
+
+		@include breakpoint(medium) {
+			height: 8.5rem;
+			max-width: 77.5rem;
+			margin: auto;
+			border: none;
+		}
+	}
+
+	.header__contact {
+		position: absolute;
+    	right: 0;
+    	padding: 1.2rem;
+	}
+
+	.header__contact--phone {
+		top: 0;
+	}
+
+	.header__contact--email {
+		top: 2rem;
+	}
+
+	.header-heading {
+		@include vertical-center;
+		font-size: 2.5rem;
+		margin: auto;
+		position: relative;
+		max-width: 30rem;
+		padding: 0 2rem;
+		font-family: 'Saira Extra Condensed', sans-serif;
+
+		@include breakpoint(medium) {
+			font-size: 3.5rem;
+			float: left;
+			color: $white;
+			transition: all 0.2s ease;
+
+			&.is-scrolled {
+				color: $theme-yellow;
+				font-size: 4rem;
+			}
+		}
+	}
+
+	.header-nav {
+		background: $black;
+
+		li {
+			display: inline-block;
+		}
+
+		a {
+		    padding: 1.5rem 4.5rem;
+		    font-size: 1.4rem;
+		    cursor: pointer;
+		    display: inline-block;
+		    color: $white;
+		    transition: background-color 0.5s ease; 
+
+		    &:hover {
+		    	background: $theme-yellow;
+		    }
+		}
+	}
+}

@@ -1,0 +1,27 @@
+.menu-toggle {
+	box-sizing: initial;
+	display: block;
+	width: 28px;
+	height: 18px;
+	padding: 11px;
+	margin: 10px 0 0;
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	left: 0;
+
+
+	&:before, &:after {
+		content: '';
+		display: block;
+		background: $white;
+		height: 2px;
+	} 
+
+	span {
+		background: $white;
+		display: block;
+		height: 2px;
+		margin: 6px 0;
+	}
+}
