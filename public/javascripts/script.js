@@ -48,47 +48,45 @@ var app = (function() {
 			var $inputName = $('#inputName'),
 				$inputEmail = $('#inputEmail'),
 				$inputPhone = $('#inputPhone'),
-				$inputMessage = $('#inputMessage')
+				$inputMessage = $('#inputMessage'),
 				valid = true;
 
-			if (!this.validName($inputName.val())) {
-				$inputName.removeClass('success').addClass('error');
-				$inputName.next('.contact-form__check').removeClass('hide').addClass('icon-remove');
-				$inputName.parents('.contact-form__block').next('.contact-form__error-message').removeClass('hide');
+			if (!this.validInput(this.validName, $inputName)) {
 				valid = false;
-			} else {
-				$inputName.removeClass('error').addClass('success');
-				$inputName.next('.contact-form__check').removeClass('hide').removeClass('icon-remove').addClass('icon-checkmark');
-				$inputName.parents('.contact-form__block').next('.contact-form__error-message').addClass('hide');
 			}
-
-			if (!this.validEmail($inputEmail.val())) {
-				$inputEmail.removeClass('success').addClass('error');
-				$inputEmail.next('.contact-form__check').removeClass('hide').addClass('icon-remove');
-				$inputEmail.parents('.contact-form__block').next('.contact-form__error-message').removeClass('hide');
+			if (!this.validInput(this.validEmail, $inputEmail)) {
 				valid = false;
-			} else {
-				$inputEmail.removeClass('error').addClass('success');
-				$inputEmail.next('.contact-form__check').removeClass('hide').removeClass('icon-remove').addClass('icon-checkmark');
-				$inputEmail.parents('.contact-form__block').next('.contact-form__error-message').addClass('hide');
 			}
-
-			if (!this.validPhoneNumber($inputPhone.val())) {
-				$inputPhone.removeClass('success').addClass('error');
-				$inputPhone.next('.contact-form__check').removeClass('hide').addClass('icon-remove');
-				$inputPhone.parents('.contact-form__block').next('.contact-form__error-message').removeClass('hide');
+			if (!this.validInput(this.validPhoneNumber, $inputPhone)) {
 				valid = false;
-			} else {
-				$inputPhone.removeClass('error').addClass('success');
-				$inputPhone.next('.contact-form__check').removeClass('hide').removeClass('icon-remove').addClass('icon-checkmark');
-				$inputPhone.parents('.contact-form__block').next('.contact-form__error-message').addClass('hide');
 			}
-
-			if (!this.validMessage($inputMessage.val())) {
+			if (!this.validMessage($inputMessage)) {
 				valid = false;
 			}
 
 			return valid;
+		},
+
+		validInput: function(valid, $input) {
+			if (!valid($input.val())) {
+				this.displayErrorMark($input);
+				return false;
+			} else {
+				this.displaySuccessMark($input);
+			}
+			return true;
+		},
+
+		displaySuccessMark: function($input) {
+			$input.removeClass('error').addClass('success');
+			$input.next('.contact-form__check').removeClass('hide').removeClass('icon-remove').addClass('icon-checkmark');
+			$input.parents('.contact-form__block').next('.contact-form__error').addClass('hide');
+		},
+
+		displayErrorMark: function($input) {
+			$input.removeClass('success').addClass('error');
+			$input.next('.contact-form__check').removeClass('hide').addClass('icon-remove');
+			$input.parents('.contact-form__block').next('.contact-form__error').removeClass('hide');
 		},
 
 		validName: function(name) {
@@ -103,10 +101,17 @@ var app = (function() {
 			return /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/i.test(number);
 		},
 
-		validMessage: function(message) {
-			return message !== "" && message.length >= 10 && message.length <= 400;
+		validMessage: function($message) {
+			if ($message.val() !== "" && $message.val().length >= 10 && $message.val().length <= 400) {
+				$message.removeClass('error').addClass('success');
+				$message.next('.contact-form__error').addClass('hide');
+				return true;
+			} else {
+				$message.removeClass('success').addClass('error');
+				$message.next('.contact-form__error').removeClass('hide');
+			}
+			return false;
 		}
-
 	};
 
 	return app;

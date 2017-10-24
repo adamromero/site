@@ -41,12 +41,16 @@
 	}
 }
 
-.contact-form__error-message {
+.contact-form__error {
 	font-size: 1.2rem;
 	color: $fail-red;
 
 	@include breakpoint(medium) {
 		padding: 0 1rem;
+	}
+
+	&.message {
+		padding: 1rem 0;
 	}
 }
 

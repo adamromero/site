@@ -4791,12 +4791,14 @@ h3 {
     .contact-form__input--message {
       max-width: 50rem; } }
 
-.contact-form__error-message {
+.contact-form__error {
   font-size: 1.2rem;
   color: #ca0000; }
   @media print, screen and (min-width: 40em) {
-    .contact-form__error-message {
+    .contact-form__error {
       padding: 0 1rem; } }
+  .contact-form__error.message {
+    padding: 1rem 0; }
 
 .icon-checkmark {
   color: #009e00;
