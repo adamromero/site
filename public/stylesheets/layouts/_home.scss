@@ -11,12 +11,20 @@
 
     &.home {
     	background-image: url(../images/welding-background.jpg);
-    	height: 75vh;
+    	height: 30vh;
+
+        @include breakpoint(medium) {
+            height: 75vh;
+        }
     }
 
     &.services {
 		background-image: url(../images/welding-background-2.jpg);
-    	height: 50vh;
+    	height: 30vh;
+
+        @include breakpoint(medium) {
+            height: 50vh;
+        }
     }
 }
 

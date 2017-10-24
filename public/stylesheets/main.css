@@ -4728,10 +4728,16 @@ h3 {
   position: relative; }
   .hero.home {
     background-image: url(../images/welding-background.jpg);
-    height: 75vh; }
+    height: 30vh; }
+    @media print, screen and (min-width: 40em) {
+      .hero.home {
+        height: 75vh; } }
   .hero.services {
     background-image: url(../images/welding-background-2.jpg);
-    height: 50vh; }
+    height: 30vh; }
+    @media print, screen and (min-width: 40em) {
+      .hero.services {
+        height: 50vh; } }
 
 .content-hero-card {
   position: absolute;
