@@ -4762,24 +4762,22 @@ h3 {
     font-size: 1.4rem; }
   .contact-form__input.error {
     border: 0.2rem solid #ca0000; }
+  .contact-form__input.success {
+    border: 0.2rem solid #009e00; }
 
-.contact-form__input-parent {
+.contact-form__block {
   position: relative;
   max-width: 100%;
   width: 100%;
   display: inline-block; }
   @media print, screen and (min-width: 40em) {
-    .contact-form__input-parent {
+    .contact-form__block {
       max-width: 25rem; } }
 
 .contact-form__input--field {
-  max-width: 100%;
   width: 100%;
   display: inline-block;
   height: 3.5rem; }
-  @media print, screen and (min-width: 40em) {
-    .contact-form__input--field {
-      max-width: 25rem; } }
 
 .contact-form__input--message {
   height: 18rem; }

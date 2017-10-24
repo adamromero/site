@@ -52,24 +52,36 @@ var app = (function() {
 				valid = true;
 
 			if (!this.validName($inputName.val())) {
-				$inputName.next('.contact-form__check').attr('class', 'icon-remove');
+				$inputName.removeClass('success').addClass('error');
+				$inputName.next('.contact-form__check').removeClass('hide').addClass('icon-remove');
+				$inputName.parents('.contact-form__block').next('.contact-form__error-message').removeClass('hide');
 				valid = false;
 			} else {
-				$inputName.next('.contact-form__check').attr('class', 'icon-checkmark');
+				$inputName.removeClass('error').addClass('success');
+				$inputName.next('.contact-form__check').removeClass('hide').removeClass('icon-remove').addClass('icon-checkmark');
+				$inputName.parents('.contact-form__block').next('.contact-form__error-message').addClass('hide');
 			}
 
 			if (!this.validEmail($inputEmail.val())) {
-				$inputEmail.next('.contact-form__check').attr('class', 'icon-remove');
+				$inputEmail.removeClass('success').addClass('error');
+				$inputEmail.next('.contact-form__check').removeClass('hide').addClass('icon-remove');
+				$inputEmail.parents('.contact-form__block').next('.contact-form__error-message').removeClass('hide');
 				valid = false;
 			} else {
-				$inputEmail.next('.contact-form__check').attr('class', 'icon-checkmark');
+				$inputEmail.removeClass('error').addClass('success');
+				$inputEmail.next('.contact-form__check').removeClass('hide').removeClass('icon-remove').addClass('icon-checkmark');
+				$inputEmail.parents('.contact-form__block').next('.contact-form__error-message').addClass('hide');
 			}
 
 			if (!this.validPhoneNumber($inputPhone.val())) {
-				$inputPhone.next('.contact-form__check').attr('class', 'icon-remove');
+				$inputPhone.removeClass('success').addClass('error');
+				$inputPhone.next('.contact-form__check').removeClass('hide').addClass('icon-remove');
+				$inputPhone.parents('.contact-form__block').next('.contact-form__error-message').removeClass('hide');
 				valid = false;
 			} else {
-				$inputPhone.next('.contact-form__check').attr('class', 'icon-checkmark');
+				$inputPhone.removeClass('error').addClass('success');
+				$inputPhone.next('.contact-form__check').removeClass('hide').removeClass('icon-remove').addClass('icon-checkmark');
+				$inputPhone.parents('.contact-form__block').next('.contact-form__error-message').addClass('hide');
 			}
 
 			if (!this.validMessage($inputMessage.val())) {
@@ -94,11 +106,6 @@ var app = (function() {
 		validMessage: function(message) {
 			return message !== "" && message.length >= 10 && message.length <= 400;
 		}
-
-
-
-
-
 
 	};
 

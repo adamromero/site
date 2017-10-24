@@ -10,9 +10,13 @@
 	&.error {
 		border: .2rem solid $fail-red;
 	}
+
+	&.success {
+		border: .2rem solid $success-green;
+	}
 }
 
-.contact-form__input-parent {
+.contact-form__block {
 	position:relative;
 	max-width: 100%;
 	width: 100%;
@@ -24,14 +28,9 @@
 }
 
 .contact-form__input--field {
-	max-width: 100%;
 	width: 100%;
 	display: inline-block;
 	height: 3.5rem;
-
-	@include breakpoint(medium) {
-		max-width: 25rem;
-	}
 }
 
 .contact-form__input--message {
