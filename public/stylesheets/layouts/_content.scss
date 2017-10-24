@@ -1,5 +1,9 @@
 .content {
-    padding: 50px;
+    padding: 1.5rem;
     max-width: 100rem;
     margin: auto;
+
+    @include breakpoint(medium) {
+    	padding: 5rem;
+    }
 }

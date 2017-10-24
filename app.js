@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressLayouts = require('express-ejs-layouts');
 var partials = require('express-partials');
+var validateEmail = require('rfc822-validate');
 
 var index = require('./routes/index');
 var services = require('./routes/services');

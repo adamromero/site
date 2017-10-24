@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 2rem;
     position: relative;
 
     &.home {
@@ -27,10 +27,10 @@
     font-size: 2.5rem;
     background: rgba(224, 202, 94, 0.6);
     padding: 2rem 4rem;
-    height: 175px;
-    max-width: 565px;
+    height: 17.5rem;
+    max-width: 56.5rem;
     width: 100%;
-    //box-shadow: 1px 1px 6px #79702a;
+    text-align: left;
 
     @include breakpoint(medium) {
     	left: 5%;

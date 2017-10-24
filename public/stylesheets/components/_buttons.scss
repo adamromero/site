@@ -1,3 +1,26 @@
+.button {
+	padding: .85rem 4rem;
+    font-size: 1.4rem;
+
+    &.disabled, 
+    &.disabled:focus, 
+    &.disabled:hover, 
+    &[disabled], 
+    &[disabled]:focus, 
+    &[disabled]:hover {
+    	background: $button-gray;
+    }
+}
+
+.button--submit {
+	background: $button-gray;
+
+	&:hover {
+		background: $theme-yellow;
+	}
+}
+
+
 .menu-toggle {
 	box-sizing: initial;
 	display: block;

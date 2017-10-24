@@ -1,18 +1,38 @@
 <div class="hero services"></div>
 <div class="content">
 	<h2>Contact</h2>
-	<label for="inputName" class="hide">Name</label>
-	<input id="inputName" placeholder="Name" />
-	<br />
-	<label for="inputEmail" class="hide">Email</label>
-	<input id="inputEmail" placeholder="Email" />
-	<br />
-	<label for="inputPhone" class="hide">Phone</label>
-	<input id="inputPhone" placeholder="Phone" />
-	<br />
-	<label for="inputMessage" class="hide">Message</label>
-	<textarea id="inputMessage" placeholder="Message"></textarea>
+	<div class="contact-form">
+		<form autocomplete="on">
 
-	<label for="inputSubmit" class="hide">Submit</label>
-	<input type="submit" value="Submit" id="inputSubmit"></input>
+			<div class="contact-form__input-parent">
+				<label for="inputName" class="hide">Name</label>
+				<input id="inputName" class="contact-form__input contact-form__input--field" name="name" type="name" required autocomplete="name" placeholder="Name" />
+				<i class="contact-form__check icon-remove" class="hide"></i>
+			</div>
+			<span class="contact-form__error-message">Your name is required</span>
+			<br />
+
+			<div class="contact-form__input-parent">
+				<label for="inputEmail" class="hide">Email</label>
+				<input id="inputEmail" class="contact-form__input contact-form__input--field" name="email" type="email" required autocomplete="email" placeholder="Email" />
+				<i class="contact-form__check icon-remove" class="hide"></i>
+			</div>
+			<span class="contact-form__error-message">Your email is required</span>
+			<br />
+
+			<div class="contact-form__input-parent">
+				<label for="inputPhone" class="hide">Phone</label>
+				<input id="inputPhone" class="contact-form__input contact-form__input--field" name="tel" type="tel" required autocomplete="tel" placeholder="Phone" />
+				<i class="contact-form__check icon-remove" class="hide"></i>
+			</div>
+			<span class="contact-form__error-message">Your phone number is required</span>
+			<br />
+
+			<label for="inputMessage" class="hide">Message</label>
+			<textarea id="inputMessage" class="contact-form__input contact-form__input--message" placeholder="Message" maxlength="400"></textarea>
+
+			<label for="inputSubmit" class="hide">Submit</label>
+			<input type="submit" class="button button--submit" value="Submit" id="inputSubmit" disabled></input>
+		</form>
+	</div>
 </div>

@@ -1,0 +1,67 @@
+.contact-form__input {
+	margin: .5rem 0;
+	padding: 1rem;
+	font-size: 1.4rem;
+
+	@include placeholder {
+		font-size: 1.4rem;
+	}
+
+	&.error {
+		border: .2rem solid $fail-red;
+	}
+}
+
+.contact-form__input-parent {
+	position:relative;
+	max-width: 100%;
+	width: 100%;
+	display: inline-block;
+
+	@include breakpoint(medium) {
+		max-width: 25rem;
+	}
+}
+
+.contact-form__input--field {
+	max-width: 100%;
+	width: 100%;
+	display: inline-block;
+	height: 3.5rem;
+
+	@include breakpoint(medium) {
+		max-width: 25rem;
+	}
+}
+
+.contact-form__input--message {
+	height: 18rem;
+	
+	@include breakpoint(medium) {
+		max-width: 50rem;
+	}
+}
+
+.contact-form__error-message {
+	font-size: 1.2rem;
+	color: $fail-red;
+
+	@include breakpoint(medium) {
+		padding: 0 1rem;
+	}
+}
+
+.icon-checkmark {
+	color: $success-green;
+	position: absolute;
+	top: 15px;
+	right: 8px;
+}
+
+.icon-remove {
+	color: $fail-red;
+	font-weight: bold;
+	position: absolute;
+	top: 15px;
+	right: 8px;
+}

@@ -16,6 +16,8 @@
     "grunt": "^1.0.1",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
+    "nodemailer": "^4.3.0",
+    "rfc822-validate": "^1.0.0",
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {

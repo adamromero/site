@@ -2,8 +2,8 @@
 	background: $black;
 	width: 100%;
     color: $white;
-	padding: 20px;
-	font-size: 1.4rem;
+	padding: 2rem;
+	font-size: 1.2rem;
 }
 
 .footer__content {
@@ -11,15 +11,20 @@
 }
 
 .footer__column {
-	padding: 20px 0;
+	padding: 2rem 0;
 }
 
 .footer__links {
 	display: block;
 	padding: .5rem;
     line-height: 1;
+    transition: color 0.5s ease;
+
+    &:hover {
+		color: $theme-yellow;
+	}
 }
 
 .footer__copyright {
-	padding: 20px 20px 100px;
+	padding: 2rem 2rem 10rem;
 }

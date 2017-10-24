@@ -4552,7 +4552,8 @@ body {
   background: #cecece; }
 
 p {
-  margin: 0 0 10px 0; }
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem; }
 
 a, a:link, a:active, a:visited, a:hover {
   color: inherit;
@@ -4565,6 +4566,37 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0; }
+
+input {
+  border: 0; }
+  input:focus {
+    outline: 0; }
+
+textarea {
+  border: 0; }
+  textarea:focus {
+    border: 0;
+    outline: 0; }
+
+h1, h2, h3 {
+  font-family: 'Saira Extra Condensed', sans-serif; }
+
+h2 {
+  font-size: 3.5rem; }
+
+h3 {
+  font-size: 2.5rem; }
+
+.button {
+  padding: .85rem 4rem;
+  font-size: 1.4rem; }
+  .button.disabled, .button.disabled:focus, .button.disabled:hover, .button[disabled], .button[disabled]:focus, .button[disabled]:hover {
+    background: #605f65; }
+
+.button--submit {
+  background: #605f65; }
+  .button--submit:hover {
+    background: #e0ca69; }
 
 .menu-toggle {
   box-sizing: initial;
@@ -4589,9 +4621,12 @@ ul {
     margin: 6px 0; }
 
 .content {
-  padding: 50px;
+  padding: 1.5rem;
   max-width: 100rem;
   margin: auto; }
+  @media print, screen and (min-width: 40em) {
+    .content {
+      padding: 5rem; } }
 
 .header {
   background: rgba(0, 0, 0, 0.75);
@@ -4611,6 +4646,15 @@ ul {
         max-width: 77.5rem;
         margin: auto;
         border: none; } }
+  .header i {
+    position: relative;
+    top: 4px;
+    right: 5px;
+    font-size: 1.8rem; }
+  .header .icon-phone {
+    transform: rotate(100deg);
+    display: inline-block;
+    top: 2px; }
   .header .header__contacts {
     position: absolute;
     right: 0;
@@ -4624,8 +4668,7 @@ ul {
     margin: auto;
     position: relative;
     max-width: 30rem;
-    padding: 0 2rem;
-    font-family: 'Saira Extra Condensed', sans-serif; }
+    padding: 0 2rem; }
     @media print, screen and (min-width: 40em) {
       .header .header-heading {
         font-size: 3.5rem;
@@ -4653,22 +4696,25 @@ ul {
   background: #000;
   width: 100%;
   color: #fff;
-  padding: 20px;
-  font-size: 1.4rem; }
+  padding: 2rem;
+  font-size: 1.2rem; }
 
 .footer__content {
   font-size: 1.6rem; }
 
 .footer__column {
-  padding: 20px 0; }
+  padding: 2rem 0; }
 
 .footer__links {
   display: block;
   padding: .5rem;
-  line-height: 1; }
+  line-height: 1;
+  transition: color 0.5s ease; }
+  .footer__links:hover {
+    color: #e0ca69; }
 
 .footer__copyright {
-  padding: 20px 20px 100px; }
+  padding: 2rem 2rem 10rem; }
 
 .hero {
   background-size: cover;
@@ -4678,7 +4724,7 @@ ul {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 2rem;
   position: relative; }
   .hero.home {
     background-image: url(../images/welding-background.jpg);
@@ -4694,11 +4740,71 @@ ul {
   font-size: 2.5rem;
   background: rgba(224, 202, 94, 0.6);
   padding: 2rem 4rem;
-  height: 175px;
-  max-width: 565px;
-  width: 100%; }
+  height: 17.5rem;
+  max-width: 56.5rem;
+  width: 100%;
+  text-align: left; }
   @media print, screen and (min-width: 40em) {
     .content-hero-card {
       left: 5%; } }
+
+.contact-form__input {
+  margin: .5rem 0;
+  padding: 1rem;
+  font-size: 1.4rem; }
+  .contact-form__input::-webkit-input-placeholder {
+    font-size: 1.4rem; }
+  .contact-form__input:-moz-placeholder {
+    font-size: 1.4rem; }
+  .contact-form__input::-moz-placeholder {
+    font-size: 1.4rem; }
+  .contact-form__input:-ms-input-placeholder {
+    font-size: 1.4rem; }
+  .contact-form__input.error {
+    border: 0.2rem solid #ca0000; }
+
+.contact-form__input-parent {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  display: inline-block; }
+  @media print, screen and (min-width: 40em) {
+    .contact-form__input-parent {
+      max-width: 25rem; } }
+
+.contact-form__input--field {
+  max-width: 100%;
+  width: 100%;
+  display: inline-block;
+  height: 3.5rem; }
+  @media print, screen and (min-width: 40em) {
+    .contact-form__input--field {
+      max-width: 25rem; } }
+
+.contact-form__input--message {
+  height: 18rem; }
+  @media print, screen and (min-width: 40em) {
+    .contact-form__input--message {
+      max-width: 50rem; } }
+
+.contact-form__error-message {
+  font-size: 1.2rem;
+  color: #ca0000; }
+  @media print, screen and (min-width: 40em) {
+    .contact-form__error-message {
+      padding: 0 1rem; } }
+
+.icon-checkmark {
+  color: #009e00;
+  position: absolute;
+  top: 15px;
+  right: 8px; }
+
+.icon-remove {
+  color: #ca0000;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 8px; }
 
 /*# sourceMappingURL=main.css.map */

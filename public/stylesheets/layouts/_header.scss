@@ -20,6 +20,19 @@
 		}
 	}
 
+	i {
+		position: relative;
+	    top: 4px;
+	    right: 5px;
+	    font-size: 1.8rem;
+	}
+
+	.icon-phone {
+		transform: rotate(100deg);
+	    display: inline-block;
+	    top: 2px;
+	}
+
 	.header__contacts {
 		position: absolute;
     	right: 0;
@@ -34,7 +47,6 @@
 		position: relative;
 		max-width: 30rem;
 		padding: 0 2rem;
-		font-family: 'Saira Extra Condensed', sans-serif;
 
 		@include breakpoint(medium) {
 			font-size: 3.5rem;

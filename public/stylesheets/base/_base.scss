@@ -15,7 +15,8 @@ body {
 }
 
 p {
-	margin: 0 0 10px 0;
+	margin: 0 0 1rem 0;
+	font-size: 1.4rem;
 }
 
 a, a:link, a:active, a:visited, a:hover {
@@ -31,4 +32,31 @@ ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+}
+
+input {
+	border: 0;
+	&:focus {
+		outline: 0;
+	}
+}
+
+textarea {
+	border: 0;
+	&:focus {
+		border: 0;
+		outline: 0;
+	}
+}
+
+h1, h2, h3 {
+	font-family: 'Saira Extra Condensed', sans-serif;
+}
+
+h2 {
+	font-size: 3.5rem;
+}
+
+h3 {
+	font-size: 2.5rem;
 }
