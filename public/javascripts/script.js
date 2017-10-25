@@ -23,9 +23,7 @@ var app = (function() {
 				app.handleHeadingState();
 			});
 
-			$('.contact-form__input').on('change keyup paste', function() {
-				app.validateContactForm();
-			});
+			app.validateContactForm();
 		},
 
 		handleHeadingState: function() {
@@ -37,34 +35,50 @@ var app = (function() {
 		},
 
 		validateContactForm: function() {
-			if (this.validContactInputs()) {
-				$('#inputSubmit').prop('disabled', false);
-			} else {
-				$('#inputSubmit').prop('disabled', true);
-			}
-		},
-
-		validContactInputs: function() {
 			var $inputName = $('#inputName'),
 				$inputEmail = $('#inputEmail'),
 				$inputPhone = $('#inputPhone'),
 				$inputMessage = $('#inputMessage'),
-				valid = true;
+				validName = false, 
+				validEmail = false, 
+				validPhone = false, 
+				validMessage = false;
 
-			if (!this.validInput(this.validName, $inputName)) {
-				valid = false;
-			}
-			if (!this.validInput(this.validEmail, $inputEmail)) {
-				valid = false;
-			}
-			if (!this.validInput(this.validPhoneNumber, $inputPhone)) {
-				valid = false;
-			}
-			if (!this.validMessage($inputMessage)) {
-				valid = false;
-			}
+			$inputName.on('change keyup paste', function(e) {
+				if (e.keyCode !== 9 && e.keyCode !== 16) {
+					validName = app.validInput(app.validName, $inputName);
+					app.handleSubmitButtonAccess(validName, validEmail, validPhone, validMessage);
+				}
+			});
 
-			return valid;
+			$inputEmail.on('change keyup paste', function(e) {
+				if (e.keyCode !== 9 && e.keyCode !== 16) {
+					validEmail = app.validInput(app.validEmail, $inputEmail);
+					app.handleSubmitButtonAccess(validName, validEmail, validPhone, validMessage);
+				}
+			});
+
+			$inputPhone.on('change keyup paste', function(e) {
+				if (e.keyCode !== 9 && e.keyCode !== 16) {
+					validPhone = app.validInput(app.validPhoneNumber, $inputPhone);
+					app.handleSubmitButtonAccess(validName, validEmail, validPhone, validMessage);
+				}
+			});
+
+			$inputMessage.on('change keyup paste', function(e) {
+				if (e.keyCode !== 9 && e.keyCode !== 16) {
+					validMessage = app.validMessage($inputMessage);
+					app.handleSubmitButtonAccess(validName, validEmail, validPhone, validMessage);
+				}
+			});
+		},
+
+		handleSubmitButtonAccess: function(validName, validEmail, validPhone, validMessage) {
+			if (validName && validEmail && validPhone && validMessage) {
+				$('#inputSubmit').prop('disabled', false);
+			} else {
+				$('#inputSubmit').prop('disabled', true);
+			}
 		},
 
 		validInput: function(valid, $input) {
