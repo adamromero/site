@@ -1,14 +1,8 @@
 module.exports = function(grunt) {
 
+  require('load-grunt-tasks')(grunt);
+
   grunt.initConfig({
-    jshint: {
-      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
-      options: {
-        globals: {
-          jQuery: true
-        }
-      }
-    },
     sass: {
       dist: {
         files: {
@@ -37,17 +31,19 @@ module.exports = function(grunt) {
         } 
       }
     },
+    jshint: {
+      files: ['Gruntfile.js', 'public/javascripts/script.js'],
+      options: {
+        globals: {
+          jQuery: true
+        }
+      }
+    },
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint']
+      files: ['public/stylesheets/**/*.scss'],
+      tasks: ['css']
     }
   });
-
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('css', ['sass', 'cssmin']);
 

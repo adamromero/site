@@ -24,6 +24,10 @@ var app = (function() {
 			});
 
 			app.validateContactForm();
+
+			if (window.location.pathname === "/contact") {
+				app.initGoogleMap();
+			}
 		},
 
 		handleHeadingState: function() {
@@ -125,6 +129,14 @@ var app = (function() {
 				$message.next('.contact-form__error').removeClass('hide');
 			}
 			return false;
+		},
+
+		initGoogleMap: function() {
+			var latlng = new google.maps.LatLng(35.640556, -120.680008);
+	        var map = new google.maps.Map(document.getElementById('map'), {
+	        	center: latlng,
+	        	zoom: 8
+	        });
 		}
 	};
 
